@@ -5,7 +5,7 @@ export function Search({ onSearch }) {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
-    let query = event.target.value
+    let query = event.target.value;
     setQuery(query);
     onSearch(query);
   };
@@ -16,7 +16,7 @@ export function Search({ onSearch }) {
       placeholder="Search..."
       value={query}
       onChange={handleChange}
-      className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+      className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 min-w-[300px]"
     />
   );
 }

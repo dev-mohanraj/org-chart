@@ -9,7 +9,7 @@ export const UserList = ({ employeeList, onClick, selectedEmployee }) => {
           key={employee.name}
           onClick={() => onClick(employee)}
           className={`flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-300 cursor-pointer flex gap-4 overflow-auto ${
-            selectedEmployee.id === employee.id ? "bg-gray-200" : ""
+            selectedEmployee.id === employee.id ? "bg-gray-400" : ""
           }`}
         >
           <div className="rounded-full w-10 h-10 bg-gray-300 flex items-center justify-center">

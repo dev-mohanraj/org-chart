@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Content } from "./pages/content";
 import { Footer } from "./pages/footer";
 import { Header } from "./pages/header";
-import { EMPLOYEES_LIST } from "./mocks/userlist.js";
+import { EMPLOYEES_LIST, EMPLOYEES_LIST_2 } from "./mocks/userlist.js";
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -10,7 +10,7 @@ function App() {
 
   useEffect(function init() {
     setIsLoading(true);
-    setEmployees(EMPLOYEES_LIST);
+    setEmployees(EMPLOYEES_LIST_2);
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);

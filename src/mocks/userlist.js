@@ -23,7 +23,6 @@ export const EMPLOYEES_LIST = [
     team: "Sales",
     designation: "UI/UX Designer",
   },
-
   {
     name: "Oberon",
     id: "01HSK8PKQ8DHQSTY0T9DRKD5ZG",
@@ -599,5 +598,111 @@ export const EMPLOYEES_LIST = [
     id: "01HSK8PKSV44SA4J2CJM74WWGZ",
     team: "Services",
     designation: "Data Scientist",
+  },
+];
+
+// let demo = [
+//   {
+//     name: "sara",
+//     id: "saraid",
+//     team: "Services",
+//     designation: "Data Scientist",
+//   },
+//   {
+//     name: "mohan",
+//     id: "01HSK8PKSV44SA4J2CJM74WWGZ",
+//     team: "Services",
+//     designation: "Data Scientist",
+//     managerId: "saraid",
+//   },
+// ];
+
+// let newDemo = {
+//   "01HSK8PKSV44SA4J2CJM74WWGZ": {
+//     name: "sara",
+//     id: "saraid",
+//     team: "Services",
+//     designation: "Data Scientist",
+//     children: [
+//       {
+//         name: "mohan",
+//         id: "01HSK8PKSV44SA4J2CJM74WWGZ",
+//         team: "Services",
+//         designation: "Data Scientist",
+//         managerId: "saraid",
+//       },
+//     ],
+//   },
+// };
+
+export const EMPLOYEES_LIST_2 = [
+  {
+    name: "Suresh",
+    id: "suresh",
+    team: "Head of a company",
+    designation: "CEO",
+  },
+  {
+    name: "Vivek",
+    id: "vivek",
+    team: "Apps",
+    designation: "CTO",
+    managerId: "suresh",
+  },
+  {
+    name: "Adhi",
+    id: "adhi",
+    team: "Platform",
+    designation: "CTO",
+    managerId: "suresh",
+  },
+  {
+    name: "Saravanan",
+    id: "sara",
+    team: "Frontend",
+    designation: "Frontend Manager",
+    managerId: "vivek",
+  },
+  {
+    name: "Partha",
+    id: "partha",
+    team: "DevX",
+    designation: "Team Lead",
+    managerId: "vivek",
+  },
+  {
+    name: "Ramprasad",
+    id: "ram",
+    team: "Apps",
+    designation: "Team Lead",
+    managerId: "sara",
+  },
+  {
+    name: "Abdhul",
+    id: "abdhul",
+    team: "Apps",
+    designation: "Senior software engineer",
+    managerId: "sara",
+  },
+  {
+    name: "Mohan",
+    id: "mohan",
+    team: "Apps",
+    designation: "Software Engineer",
+    managerId: "abdhul",
+  },
+  {
+    name: "Venkatesh",
+    id: "venki",
+    team: "Apps",
+    designation: "Software Engineer",
+    managerId: "ram",
+  },
+  {
+    name: "Shibi",
+    id: "shibi",
+    team: "DevX",
+    designation: "Software Engineer",
+    managerId: "partha",
   },
 ];
