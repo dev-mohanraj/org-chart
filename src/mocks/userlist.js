@@ -2,7 +2,7 @@ export const EMPLOYEES_LIST = [
   {
     name: "Natalie",
     id: "01HSK8PKQ7R7BEJ87T4BYAHWRD",
-    team: "Support",
+    team: "Head of a company",
     designation: "CEO",
   },
   {
