@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { debounce } from "../utils";
 
 export const Filter = ({ teams = [], onChange }) => {
   const [selectedTeam, setSelectedTeam] = useState("");
 
-  const handleTeamChange = (event) => {
+  const handleTeamChange = debounce((event) => {
     let value = event.target.value;
     setSelectedTeam(value);
     onChange(value);
-  };
+  })
 
   return (
     <select
