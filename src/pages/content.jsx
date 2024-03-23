@@ -64,8 +64,8 @@ export const Content = ({ employees }) => {
           </div>
         </Show>
       </div>
-      <div className={"h-full md:w-2/3 w-full overflow-y-auto gap-2 shadow-lg"}>
-       <ChartView employees={employees}/>
+      <div className={"h-full md:w-2/3 w-full overflow-y-auto gap-2 shadow-lg bg-gray-100"}>
+       <ChartView employees={searchResults}/>
       </div>
     </section>
   );
