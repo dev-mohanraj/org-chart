@@ -19,10 +19,9 @@ export const Content = ({ employees }) => {
   const [selectedEmployee, setSelectedEmployee] = useState({});
   const [searchResults, setSearchResults] = useState([]);
 
-
-  useEffect(()=>{
-      setSelectedEmployee(employees[0])
-  },[])
+  useEffect(() => {
+    setSelectedEmployee(employees[0]);
+  }, []);
 
   useEffect(
     function initSearch() {
@@ -34,6 +33,10 @@ export const Content = ({ employees }) => {
 
   const handleUserSelect = (employee) => {
     setSelectedEmployee(employee);
+    const element = document.getElementById(employee.name);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   };
 
   const handleSearch = (queryString) => {
@@ -81,7 +84,10 @@ export const Content = ({ employees }) => {
           "h-full md:w-2/3 w-full overflow-y-auto gap-2 shadow-lg bg-gray-100"
         }
       >
-        <TreeView selectedEmployee={selectedEmployee} employees={searchResults} />
+        <TreeView
+          selectedEmployee={selectedEmployee}
+          employees={searchResults}
+        />
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ export const TreeCard = (props) => {
   let { name, team, designation, selectedEmployee, id } = props;
   return (
     <div
+      id={name}
       className={`bg-white rounded-lg shadow-md p-4 min-w-[250px] ${
         selectedEmployee.id === id ? "bg-slate-300" : ""
       }`}
