@@ -8,7 +8,7 @@ export const UserList = ({ employeeList, onClick, selectedEmployee }) => {
         <div
           key={employee.name}
           onClick={() => onClick(employee)}
-          className={`flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-300 cursor-pointer flex gap-4 overflow-auto ${
+          className={`flex items-center border-b border-gray-500 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-300 cursor-pointer flex gap-4 overflow-auto ${
             selectedEmployee.id === employee.id ? "bg-gray-400" : ""
           }`}
         >
