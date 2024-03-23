@@ -4,12 +4,14 @@ import { buildEmployeeTree } from "../utils";
 import OrgTreeComponent, { useTree } from "react-drag-hierarchy-tree";
 
 export const ChartView = ({ employees }) => {
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData] = useState({});
   const { treeRef } = useTree();
 
   useEffect(() => {
-    let result = buildEmployeeTree(employees);
-    setChartData(result);
+    if (employees.length > 0) {
+      let result = buildEmployeeTree(employees)[0];
+      setChartData(result);
+    }
   }, [employees]);
 
   const data = {
@@ -40,11 +42,13 @@ export const ChartView = ({ employees }) => {
       },
     ],
   };
-  return (
-    <div>
-      <OrgTreeComponent data={chartData} ref={treeRef} collapsable={false} />
-    </div>
-  );
+  if (Object.keys(chartData).length > 0) {
+    return (
+      <div>
+        <OrgTreeComponent data={chartData} ref={treeRef} collapsable={false} />
+      </div>
+    );
+  }
 };
 
 ChartView.propTypes = {

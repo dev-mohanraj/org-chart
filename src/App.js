@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Content } from "./pages/content";
-import { Footer } from "./pages/footer";
-import { Header } from "./pages/header";
+import { Content } from "./pages/content.jsx";
+import { Footer } from "./pages/footer.jsx";
+import { Header } from "./pages/header.jsx";
 import { EMPLOYEES_LIST, EMPLOYEES_LIST_2 } from "./mocks/userlist.js";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     setEmployees(EMPLOYEES_LIST_2);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 100);
   }, []);
 
   if (isLoading) {
