@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
-import { Filter } from "../components/filter";
-import { Search } from "../components/search";
-import { UserList } from "../components/user.list";
 import PropTypes from "prop-types";
-import { debounce, filterEmployeesByTeams, filterTeams, searchEmployees } from "../utils";
-import { Show } from "../components/show";
-import { ChartView } from "../components/chart.view";
+import {
+  debounce,
+  filterEmployeesByTeams,
+  filterTeams,
+  searchEmployees,
+} from "../utils";
+import {
+  Filter,
+  Search,
+  TreeView,
+  UserList,
+  Show,
+} from "../components/index.jsx";
 
 export const Content = ({ employees }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedEmployee, setSelectedEmployee] = useState({});
   const [searchResults, setSearchResults] = useState([]);
+
+
+  useEffect(()=>{
+      setSelectedEmployee(employees[0])
+  },[])
 
   useEffect(
     function initSearch() {
@@ -29,12 +41,12 @@ export const Content = ({ employees }) => {
   };
 
   const handleFilter = (value) => {
-    let result = filterEmployeesByTeams(employees,value)
+    let result = filterEmployeesByTeams(employees, value);
     setSearchResults(result);
-  }
+  };
 
   const teams = filterTeams(employees);
-  const handleSearchDebounce = debounce(handleSearch)
+  const handleSearchDebounce = debounce(handleSearch);
 
   return (
     <section
@@ -43,9 +55,9 @@ export const Content = ({ employees }) => {
       }
     >
       <div className={"md:h-full md:w-1/3 w-full flex flex-col"}>
-        <div className="border-b border-gray-200 p-4 flex gap-8 justify-between">
+        <div className="border-b-[2px] border-gray-400 p-4 flex gap-8 justify-between">
           <Search onSearch={handleSearchDebounce} />
-          <Filter teams={teams} onChange={handleFilter}/>
+          <Filter teams={teams} onChange={handleFilter} />
         </div>
         <Show when={searchResults.length > 0}>
           <div className="overflow-auto">
@@ -64,8 +76,12 @@ export const Content = ({ employees }) => {
           </div>
         </Show>
       </div>
-      <div className={"h-full md:w-2/3 w-full overflow-y-auto gap-2 shadow-lg bg-gray-100"}>
-       <ChartView employees={searchResults}/>
+      <div
+        className={
+          "h-full md:w-2/3 w-full overflow-y-auto gap-2 shadow-lg bg-gray-100"
+        }
+      >
+        <TreeView selectedEmployee={selectedEmployee} employees={searchResults} />
       </div>
     </section>
   );

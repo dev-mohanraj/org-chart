@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-export function Search({ onSearch }) {
+export const Search = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {

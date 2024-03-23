@@ -1,14 +1,12 @@
 export const EMPLOYEES_LIST = [
   {
     name: "Suresh",
-    label: "Suresh",
     id: "suresh",
     team: "Head of a company",
     designation: "CEO",
   },
   {
     name: "Vivek",
-    label: "Vivek",
     id: "vivek",
     team: "Apps",
     designation: "CTO",
@@ -16,7 +14,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Adhi",
-    label: "Adhi",
     id: "adhi",
     team: "Platform",
     designation: "CTO",
@@ -24,7 +21,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Purushoth",
-    label: "Purushoth",
     id: "purushoth",
     team: "Platform",
     designation: "Backend Manager",
@@ -32,7 +28,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Gopal",
-    label: "Gopal",
     id: "gopal",
     team: "Platform",
     designation: "Team Lead",
@@ -40,7 +35,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Saravanan",
-    label: "Saravanan",
     id: "sara",
     team: "Frontend",
     designation: "Frontend Manager",
@@ -48,7 +42,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Partha",
-    label: "Partha",
     id: "partha",
     team: "DevX",
     designation: "Team Lead",
@@ -56,7 +49,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Ramprasad",
-    label: "Ramprasad",
     id: "ram",
     team: "Apps",
     designation: "Team Lead",
@@ -64,7 +56,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Abdhul",
-    label: "Abdhul",
     id: "abdhul",
     team: "Apps",
     designation: "Senior software engineer",
@@ -72,7 +63,6 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Mohan",
-    label: "Mohan",
     id: "mohan",
     team: "Apps",
     designation: "Software Engineer",
@@ -80,18 +70,51 @@ export const EMPLOYEES_LIST = [
   },
   {
     name: "Venkatesh",
-    label: "Venkatesh",
     id: "venki",
     team: "Apps",
     designation: "Software Engineer",
     managerId: "ram",
   },
   {
+    name: "Satheesh",
+    id: "satheesh",
+    team: "Apps",
+    designation: "Software Engineer",
+    managerId: "ram",
+  },
+  {
+    name: "Maneesh",
+    id: "maneesh",
+    team: "Apps",
+    designation: "Software Engineer",
+    managerId: "ram",
+  },
+  {
+    name: "Indhu",
+    id: "indhu",
+    team: "DevX",
+    designation: "Senior Software Engineer",
+    managerId: "partha",
+  },
+  {
     name: "Shibi",
-    label: "Shibi",
     id: "shibi",
     team: "DevX",
     designation: "Software Engineer",
-    managerId: "partha",
+    managerId: "indhu",
+  },
+  {
+    name: "New guy",
+    id: "new1",
+    team: "DevX",
+    designation: "Software Engineer",
+    managerId: "shibi",
+  },
+  {
+    name: "New guy 2",
+    id: "new2",
+    team: "DevX",
+    designation: "Software Engineer",
+    managerId: "new1",
   },
 ];
