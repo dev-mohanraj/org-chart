@@ -2,18 +2,28 @@ import { useEffect, useState } from "react";
 import { Content } from "./pages/content.jsx";
 import { Footer } from "./pages/footer.jsx";
 import { Header } from "./pages/header.jsx";
-import { EMPLOYEES_LIST, EMPLOYEES_LIST_2 } from "./mocks/userlist.js";
 
 function App() {
   const [employees, setEmployees] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(function init() {
-    setIsLoading(true);
-    setEmployees(EMPLOYEES_LIST_2);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
+  useEffect(() => {
+    const fetchEmployeeList = async () => {
+      try {
+        const response = await fetch("/api/employees/list");
+        if (!response.ok) {
+          throw new Error("Failed to fetch employee list");
+        }
+        const data = await response.json();
+        setEmployees(data);
+      } catch (error) {
+        console.error("Error fetching employee list:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchEmployeeList();
   }, []);
 
   if (isLoading) {
