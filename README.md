@@ -14,6 +14,9 @@ You can view the live demo of this project [here](https://org-chart-eight.vercel
 - Search functionality allows users to search for employees by name.
 - Filter employees by team to focus on specific teams within the organization.
 - Active items can be selected directly on the tree for quick access and interaction.
+## Performace Report 
+
+<img width="450" alt="Screenshot 2024-03-24 at 4 16 30 PM" src="https://github.com/dev-mohanraj/org-chart/assets/84064669/e2afa3bf-323f-471a-ba61-eb38274ddd06">
 
 ## Getting Started
 
@@ -43,3 +46,4 @@ This project is deployed using Vercel. Any changes pushed to the `main` branch a
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
