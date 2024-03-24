@@ -12,15 +12,31 @@ export const UserList = ({ employeeList, onClick, selectedEmployee }) => {
             selectedEmployee.id === employee.id ? "bg-slate-300" : ""
           }`}
         >
-          <div className={`rounded-full w-10 h-10 bg-gray-300 flex items-center justify-center ${ selectedEmployee.id === employee.id ? "bg-white" : "bg-slate-300"}`}>
-            <p className="text-gray-600 text-lg font-semibold">
-              {getNameInitials(employee.name)}
-            </p>
-          </div>
+          {employee.imageUrl ? (
+            <div className={` flex items-center justify-center `}>
+              <img
+                src={employee.imageUrl}
+                alt={employee.name}
+                className=" w-16 h-16 rounded-full object-contain"
+              />
+            </div>
+          ) : (
+            <div
+              className={`rounded-full w-10 h-10 bg-gray-300 flex items-center justify-center ${
+                selectedEmployee.id === employee.id
+                  ? "bg-white"
+                  : "bg-slate-300"
+              }`}
+            >
+              <p className="text-gray-600 text-lg font-semibold">
+                {getNameInitials(employee.name)}
+              </p>
+            </div>
+          )}
           <div>
             <p className="font-semibold">{employee.name}</p>
             <p className="text-sm">{employee.designation}</p>
-            <p className="text-sm text-gray-500">{employee.team}</p>
+            <p className="text-sm text-gray-500 ">{employee.team}</p>
           </div>
         </div>
       ))}

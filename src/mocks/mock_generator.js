@@ -1,4 +1,6 @@
-export const EMPLOYEES_LIST = [
+import fs from "fs";
+
+const EMPLOYEES_LIST = [
   {
     name: "Suresh",
     id: "suresh",
@@ -166,3 +168,57 @@ export const EMPLOYEES_LIST = [
       "https://images.unsplash.com/photo-1645378999496-33c8c2afe38d?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
+
+const SampleUserImages = [
+  "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3569&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=3466&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1645830166230-187caf791b90?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=3578&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1642257859842-c95f9fa8121d?q=80&w=3336&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=3656&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=3580&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1645378999496-33c8c2afe38d?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
+
+const generateMoreEmployees = () => {
+  const newEmployees = [];
+  const sampleImageIndex = Math.floor(Math.random() * SampleUserImages.length);
+
+  for (let i = 0; i < 25; i++) {
+    const managerId = Math.floor(Math.random() * EMPLOYEES_LIST.length);
+    const teamIndex = Math.floor(Math.random() * teams.length);
+    const imageUrl =
+      SampleUserImages[(sampleImageIndex + i) % SampleUserImages.length];
+
+    newEmployees.push({
+      name: `New Employee ${i}`,
+      id: `new-${i}`,
+      team: teams[teamIndex],
+      designation: "Software Engineer",
+      hierarchy: EMPLOYEES_LIST[managerId].hierarchy + 1,
+      managerId: EMPLOYEES_LIST[managerId].id,
+      imageUrl: imageUrl,
+    });
+  }
+
+  return newEmployees;
+};
+
+const teams = ["Apps", "Platform", "DevX", "QA", "Design", "Marketing"];
+const moreEmployees = generateMoreEmployees();
+const allEmployees = [...EMPLOYEES_LIST, ...moreEmployees];
+const dataString = `export const EMPLOYEES_LIST = ${JSON.stringify(
+  allEmployees,
+  null,
+  2
+)};\n`;
+
+// Write the string to the file
+fs.writeFileSync("userlist.js", dataString, "utf8");
