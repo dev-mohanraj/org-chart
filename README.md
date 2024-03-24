@@ -10,10 +10,12 @@ You can view the live demo of this project [here](https://org-chart-eight.vercel
 
 - Display an organization chart with hierarchical structure.
 - Drag-and-drop functionality to rearrange nodes within the chart.
-- Performance optimizations including virtual scrolling for improved efficiency with large datasets.
+- Zoom-in and Zoom out for tree view
+- Debounce for optimistic search
 - Search functionality allows users to search for employees by name.
 - Filter employees by team to focus on specific teams within the organization.
 - Active items can be selected directly on the tree for quick access and interaction.
+
 ## Performace Report 
 
 <img width="450" alt="Screenshot 2024-03-24 at 4 16 30 PM" src="https://github.com/dev-mohanraj/org-chart/assets/84064669/e2afa3bf-323f-471a-ba61-eb38274ddd06">
@@ -27,13 +29,6 @@ To run this project locally, follow these steps:
 3. Install dependencies by running `npm install` or `yarn install`.
 4. Start the development server with `npm start` or `yarn start`.
 5. Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
-
-## Usage
-
-Once the application is running, you can interact with the organization chart by:
-
-- Dragging and dropping nodes to rearrange the hierarchy.
-- Scrolling to navigate through large datasets efficiently.
 
 ## Library Used
 
