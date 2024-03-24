@@ -8,9 +8,8 @@ export const TreeCard = (props) => {
   return (
     <div
       id={name}
-      className={`bg-white rounded-lg shadow-md p-4 w-[300px] ${
-        selectedEmployee.id === id ? "bg-gray-400" : ""
-      }`}
+      className={`bg-white rounded-lg shadow-md p-4 w-[300px]`}
+      style={{ backgroundColor: selectedEmployee.id === id ? "#9ca3af" : "" }}
     >
       <div className="flex items-center">
         {imageUrl ? (
@@ -28,8 +27,10 @@ export const TreeCard = (props) => {
         )}
         <div className="ml-4 flex flex-col items-start">
           <h2 className="text-xl font-semibold">{name}</h2>
-          <p className="text-gray-600">{team}</p>
-          <p className="text-gray-600 truncate text-ellipsis max-w-[200px]">{designation}</p>
+          <p className={"text-gray-600"}>{team}</p>
+          <p className={"text-gray-600 truncate text-ellipsis max-w-[200px]"}>
+            {designation}
+          </p>
         </div>
       </div>
     </div>
