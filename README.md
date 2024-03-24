@@ -11,6 +11,7 @@ You can view the live demo of this project [here](https://org-chart-eight.vercel
 - Display an organization chart with hierarchical structure.
 - Drag-and-drop functionality to rearrange nodes within the chart.
 - Zoom-in and Zoom out for tree view
+- Debounce for optimistic search
 - Search functionality allows users to search for employees by name.
 - Filter employees by team to focus on specific teams within the organization.
 - Active items can be selected directly on the tree for quick access and interaction.
