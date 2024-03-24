@@ -4,7 +4,7 @@ This project is a React-based application that displays an organization chart wi
 
 ## Demo
 
-You can view the live demo of this project [here](https://org-chart-iru1gagh4-mohanrajvengigmailcoms-projects.vercel.app/).
+You can view the live demo of this project [here](https://org-chart-eight.vercel.app/).
 
 ## Features
 
@@ -38,7 +38,7 @@ Once the application is running, you can interact with the organization chart by
 
 ## Deployment
 
-This project is deployed using Vercel. Any changes pushed to the `main` branch are automatically deployed to [https://org-chart-iru1gagh4-mohanrajvengigmailcoms-projects.vercel.app/](https://org-chart-iru1gagh4-mohanrajvengigmailcoms-projects.vercel.app/).
+This project is deployed using Vercel. Any changes pushed to the `main` branch are automatically deployed to [https://org-chart-iru1gagh4-mohanrajvengigmailcoms-projects.vercel.app/](https://org-chart-eight.vercel.app/).
 
 ## License
 
