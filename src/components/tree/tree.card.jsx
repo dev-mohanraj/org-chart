@@ -20,7 +20,7 @@ export const TreeCard = (props) => {
           />
         ) : (
           <div
-            className={`h-10 w-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-lg font-semibold`}
+            className={`w-16 h-16  bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-lg font-semibold`}
           >
             {getNameInitials(name)}
           </div>

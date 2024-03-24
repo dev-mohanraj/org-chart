@@ -22,7 +22,7 @@ export const UserList = ({ employeeList, onClick, selectedEmployee }) => {
             </div>
           ) : (
             <div
-              className={`rounded-full w-10 h-10 bg-gray-300 flex items-center justify-center ${
+              className={`rounded-full  w-16 h-16  bg-gray-300 flex items-center justify-center ${
                 selectedEmployee.id === employee.id
                   ? "bg-white"
                   : "bg-slate-300"
