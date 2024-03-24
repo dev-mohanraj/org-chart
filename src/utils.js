@@ -38,22 +38,29 @@ export function filterEmployeesByTeams(employees, selectedTeam) {
   return filteredEmployees;
 }
 
-export function buildEmployeeTree(employees) {
+export function buildEmployeeTree(employees, teamFilter) {
   const employeeMap = new Map();
+  const rootEmployees = [];
+
+  // Step 1: Create a map of employees and find root employees
   employees.forEach((employee) => {
+    if (teamFilter !== "All" && employee.team !== teamFilter) return; // Skip employees not in the filtered team
     employee.children = [];
     employeeMap.set(employee.id, employee);
+    if (!employee.managerId) rootEmployees.push(employee);
   });
-  const rootEmployees = [];
+
+  // Step 2: Connect employees to their managers
   employeeMap.forEach((employee) => {
-    if (employee.managerId) {
-      const manager = employeeMap.get(employee.managerId);
-      if (manager) {
-        manager.children.push(employee);
-      }
+    if (!employee.managerId) return; // Skip root employees
+    const manager = employeeMap.get(employee.managerId);
+    if (manager) {
+      manager.children.push(employee);
     } else {
+      // If manager is not found, add this employee as a root employee
       rootEmployees.push(employee);
     }
   });
-  return rootEmployees[0];
+
+  return rootEmployees;
 }

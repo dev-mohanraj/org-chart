@@ -18,6 +18,7 @@ export const Content = ({ employees }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedEmployee, setSelectedEmployee] = useState({});
   const [searchResults, setSearchResults] = useState([]);
+  const [team, setTeam] = useState("All");
 
   useEffect(() => {
     setSelectedEmployee(employees[0]);
@@ -44,6 +45,7 @@ export const Content = ({ employees }) => {
   };
 
   const handleFilter = (value) => {
+    setTeam(value === "" ? "All" : value);
     let result = filterEmployeesByTeams(employees, value);
     setSearchResults(result);
   };
@@ -86,7 +88,9 @@ export const Content = ({ employees }) => {
       >
         <TreeView
           selectedEmployee={selectedEmployee}
-          employees={searchResults}
+          employees={employees}
+          searchTerm={searchTerm}
+          team={team}
         />
       </div>
     </section>

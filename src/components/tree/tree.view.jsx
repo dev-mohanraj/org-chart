@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import {
-  buildEmployeeTree
-} from "../../utils";
+import { buildEmployeeTree } from "../../utils";
 import OrgTreeComponent, { useTree } from "react-drag-hierarchy-tree";
 import { TreeCard } from "./tree.card";
 import "./override.css";
 
-export const TreeView = ({ employees, selectedEmployee }) => {
+export const TreeView = ({ employees, selectedEmployee, team }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState({});
   const { treeRef } = useTree();
@@ -15,12 +13,12 @@ export const TreeView = ({ employees, selectedEmployee }) => {
   useEffect(() => {
     setIsLoading(true);
     if (employees.length > 0) {
-      let result = buildEmployeeTree(employees);
+      let result = buildEmployeeTree(employees, team);
       setChartData(result || {});
     }
     setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [employees]);
+  }, [employees, team]);
 
   if (isLoading) {
     return (
@@ -35,15 +33,20 @@ export const TreeView = ({ employees, selectedEmployee }) => {
     return <TreeCard selectedEmployee={selectedEmployee} {...props.data} />;
   };
 
-  if (Object.keys(chartData).length > 0 && !isLoading) {
+  if (chartData.length > 0 && !isLoading) {
     return (
       <div className="treeViewWrapper">
-        <OrgTreeComponent
-          data={chartData}
-          ref={treeRef}
-          collapsable={false}
-          renderCard={renderCard}
-        />
+        {chartData.map((item) => {
+          return (
+            <OrgTreeComponent
+              key={item.name}
+              data={item}
+              ref={treeRef}
+              collapsable={false}
+              renderCard={renderCard}
+            />
+          );
+        })}
       </div>
     );
   }
