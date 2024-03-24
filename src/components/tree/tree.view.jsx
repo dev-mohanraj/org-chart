@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { buildEmployeeTree } from "../../utils";
+import {
+  buildEmployeeTree
+} from "../../utils";
 import OrgTreeComponent, { useTree } from "react-drag-hierarchy-tree";
 import { TreeCard } from "./tree.card";
 import "./override.css";
 
-export const TreeView = ({ employees , selectedEmployee }) => {
+export const TreeView = ({ employees, selectedEmployee }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState({});
   const { treeRef } = useTree();
@@ -49,5 +51,5 @@ export const TreeView = ({ employees , selectedEmployee }) => {
 
 TreeView.propTypes = {
   employees: PropTypes.array,
-  selectedEmployee: PropTypes.object
+  selectedEmployee: PropTypes.object,
 };
