@@ -9,14 +9,12 @@ export const TreeCard = (props) => {
     <div
       id={name}
       className={`bg-white rounded-lg shadow-md p-4 min-w-[250px] ${
-        selectedEmployee.id === id ? "bg-slate-300" : ""
+        selectedEmployee.id === id ? "bg-gray-400" : ""
       }`}
     >
       <div className="flex items-center">
         <div
-          className={`h-10 w-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-lg font-semibold ${
-            selectedEmployee.id === id ? "bg-white" : "bg-slate-300"
-          }`}
+          className={`h-10 w-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-lg font-semibold`}
         >
           {getNameInitials(name)}
         </div>
