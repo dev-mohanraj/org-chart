@@ -56,10 +56,10 @@ export const Content = ({ employees }) => {
   return (
     <section
       className={
-        "h-full z-40 flex md:flex-row flex-col justify-between w-screen md:overflow-hidden overflow-auto mobile-layout"
+        "w-full h-full z-40 flex md:flex-row flex-col justify-between w-screen md:overflow-hidden overflow-auto mobile-layout"
       }
     >
-      <div className={"sm:w-2/5 w-20 min-w-0 flex flex-col"}>
+      <div className={"flex flex-col min-w-[400px] w-[400px]"}>
         <div className="border-b-[2px] border-gray-400 p-4 flex gap-8 justify-between">
           <Search onSearch={handleSearchDebounce} />
           <Filter teams={teams} onChange={handleFilter} />
@@ -81,11 +81,7 @@ export const Content = ({ employees }) => {
           </div>
         </Show>
       </div>
-      <div
-        className={
-          "md:w-3/5 w-80 min-w-0 overflow-auto gap-2 shadow-lg bg-gray-100"
-        }
-      >
+      <div className={"overflow-auto gap-2 shadow-lg bg-gray-100 w-full"}>
         <TreeView
           selectedEmployee={selectedEmployee}
           employees={searchResults}

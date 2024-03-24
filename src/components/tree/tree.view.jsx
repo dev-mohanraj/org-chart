@@ -62,13 +62,14 @@ export const TreeView = ({ employees, selectedEmployee, team }) => {
             })}
           </div>
         </div>
-        <div className="flex gap-8 p-8 fixed bottom-20 right-20">
+        <div className="flex gap-4 fixed bottom-20 right-10 items-center">
           <button
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
             onClick={handleZoomIn}
           >
             +
           </button>
+          {Math.round(zoomLevel * 100)} %
           <button
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
             onClick={handleZoomOut}
