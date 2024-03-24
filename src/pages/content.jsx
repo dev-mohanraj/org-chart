@@ -88,8 +88,7 @@ export const Content = ({ employees }) => {
       >
         <TreeView
           selectedEmployee={selectedEmployee}
-          employees={employees}
-          searchTerm={searchTerm}
+          employees={searchResults}
           team={team}
         />
       </div>
