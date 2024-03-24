@@ -9,6 +9,7 @@ export const TreeView = ({ employees, selectedEmployee, team }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState({});
   const { treeRef } = useTree();
+  const [zoomLevel, setZoomLevel] = useState(1); // State for zoom level
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,6 +20,16 @@ export const TreeView = ({ employees, selectedEmployee, team }) => {
     setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [employees, team]);
+
+  const handleZoomIn = () => {
+    setZoomLevel(zoomLevel + 0.1);
+  };
+
+  const handleZoomOut = () => {
+    if (zoomLevel > 0.1) {
+      setZoomLevel(zoomLevel - 0.1);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -35,18 +46,36 @@ export const TreeView = ({ employees, selectedEmployee, team }) => {
 
   if (chartData.length > 0 && !isLoading) {
     return (
-      <div className="treeViewWrapper">
-        {chartData.map((item) => {
-          return (
-            <OrgTreeComponent
-              key={item.name}
-              data={item}
-              ref={treeRef}
-              collapsable={false}
-              renderCard={renderCard}
-            />
-          );
-        })}
+      <div className="flex flex-col overflow-auto relative">
+        <div className="treeViewWrapper flex flex-col overflow-hidden overflow-x-auto">
+          <div style={{ transform: `scale(${zoomLevel})` }}>
+            {chartData.map((item) => {
+              return (
+                <OrgTreeComponent
+                  key={item.name}
+                  data={item}
+                  ref={treeRef}
+                  collapsable={false}
+                  renderCard={renderCard}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex gap-8 p-8 fixed bottom-20 right-20">
+          <button
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+            onClick={handleZoomIn}
+          >
+            +
+          </button>
+          <button
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+            onClick={handleZoomOut}
+          >
+            -
+          </button>
+        </div>
       </div>
     );
   }

@@ -83,7 +83,7 @@ export const Content = ({ employees }) => {
       </div>
       <div
         className={
-          "h-full md:w-4/5 w-full overflow-y-auto gap-2 shadow-lg bg-gray-100"
+          "h-full md:w-4/5 w-full overflow-auto gap-2 shadow-lg bg-gray-100"
         }
       >
         <TreeView
