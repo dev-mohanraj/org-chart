@@ -6,6 +6,8 @@ This project is a React-based application that displays an organization chart wi
 
 You can view the live demo of this project [here](https://org-chart-eight.vercel.app/).
 
+Video demonstration https://drive.google.com/drive/folders/1KaDP3AjqpVJTC8SwestUUe5L_t0mJX5A?usp=sharing
+
 ## Features
 
 - Display an organization chart with hierarchical structure.
